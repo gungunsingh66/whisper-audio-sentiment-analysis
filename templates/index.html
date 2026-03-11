@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Audio Sentiment Analyzer</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎙️ AI Audio Sentiment Analyzer</h1>
+<p class="subtitle">Upload an audio file and let AI detect the sentiment</p>
+
+<form method="POST" enctype="multipart/form-data" class="upload-box">
+
+<label for="audio" class="file-label">Choose Audio File</label>
+<input type="file" name="audio" id="audio">
+
+<button type="submit">Analyze Audio</button>
+
+</form>
+
+{% if text %}
+
+<div class="result">
+
+<h3>📝 Transcription</h3>
+<p>{{text}}</p>
+
+<h3>💡 Sentiment</h3>
+<p class="sentiment">{{sentiment}}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
